@@ -10,6 +10,7 @@
     <nav>
         <h1>Flaskr</h1>
         <ul>
+            <!-- Check if it is logged -->
             {% if g.user %}
                 <li><span>{{ g.user['username'] }}</span></li>
                 <li><a href="{{ url_for('auth.logout') }}"></a>Log Out</li>
@@ -20,12 +21,15 @@
         </ul>
     </nav>
     <section class="content">
+        <!-- Space for page title -->
         <header>
             {% block header %}{% endblock %}
         </header>
+        <!-- Iterate each message and show it -->
         {% for message in get_flashed_message() %}
             <div class="flash">{{ message }}</div>
         {% endfor %}
+        <!-- Space for page content, maybe login form or content post -->
         {% block content %}{% endblock %}
     </section>
 </body>
