@@ -26,7 +26,7 @@
             {% block header %}{% endblock %}
         </header>
         <!-- Iterate each message and show it -->
-        {% for message in get_flashed_message() %}
+        {% for message in get_flashed_messages() %}
             <div class="flash">{{ message }}</div>
         {% endfor %}
         <!-- Space for page content, maybe login form or content post -->
